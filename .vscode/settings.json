@@ -9,5 +9,6 @@
     "activityBar.activeBorder": "#25320e",
     "statusBar.background": null,
     "activityBar.background": null
-  }
+  },
+  "xml.preferences.showSchemaDocumentationType": "none"
 }
