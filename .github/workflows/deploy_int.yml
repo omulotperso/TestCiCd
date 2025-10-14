@@ -24,7 +24,7 @@ jobs:
         
     - name: Connect to INT Sandbox
       run: |
-        echo ${{ secrets.SFDX_AUTHURL_INT }} > ./authfile
+        echo ${{ secrets.SFDX_AUTHURL_INT2 }} > ./authfile
         sf auth sfdxurl store --sfdx-url-file authfile --alias SANDBOX-INT --set-default
     
     - name: Create new empty Profiles

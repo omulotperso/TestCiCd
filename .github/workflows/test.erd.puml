@@ -1,0 +1,7 @@
+@startuml
+entity "Country General Setting" as CGS {
+}
+entity "Accounts Field To Verify" as AFTV {
+}
+CGS --o{ AFTV : "Can have many"}
+@enduml
