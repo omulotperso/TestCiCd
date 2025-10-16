@@ -31,6 +31,6 @@ jobs:
       run: |
         sf texei skinnyprofile create --target-org SANDBOX-UAT
 
-    - name: Deploy on UAT Sandbox
+    - name: Deploy on UAT Sandbox  
       run: |
         sf project deploy start --source-dir force-app --test-level RunLocalTests --target-org SANDBOX-UAT --wait ${{ secrets.SFDX_TIMEOUT }} --ignore-conflicts --dry-run
