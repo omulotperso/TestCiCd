@@ -25,12 +25,12 @@ jobs:
     - name: Connect to UAT Sandbox
       run: |
         echo ${{ secrets.SFDX_AUTHURL_UAT }} > ./authfile
-        sf auth sfdxurl store --sfdx-url-file authfile --alias SANDBOX-UAT --set-default
+        sf auth sfdxurl store --sfdx-url-file authfile --alias UAT --set-default
     
     - name: Create new empty Profiles
       run: |
-        sf texei skinnyprofile create --target-org SANDBOX-UAT
+        sf texei skinnyprofile create --target-org UAT
 
     - name: Deploy on UAT Sandbox
       run: |
-        sf project deploy start --source-dir force-app --test-level RunLocalTests --target-org SANDBOX-UAT --wait ${{ secrets.SFDX_TIMEOUT }} --ignore-conflicts --dry-run
+        sf project deploy start --source-dir force-app --test-level RunLocalTests --target-org UAT --wait ${{ secrets.SFDX_TIMEOUT }} --ignore-conflicts --dry-run
