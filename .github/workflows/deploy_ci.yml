@@ -25,11 +25,11 @@ jobs:
     - name: Connect to CI Sandbox
       run: |
         echo ${{ secrets.SFDX_AUTHURL_CI }} > ./authfile
-        sf auth sfdxurl store --sfdx-url-file authfile --alias SANDBOX-CI --set-default
+        sf auth sfdxurl store --sfdx-url-file authfile --alias CI --set-default
     
     - name: Create new empty Profiles
       run: |
-        sf texei skinnyprofile create --target-org SANDBOX-CI
+        sf texei skinnyprofile create --target-org CI
 
     - name: Deploy on CI Sandbox
       run: |
