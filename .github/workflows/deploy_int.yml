@@ -25,12 +25,12 @@ jobs:
     - name: Connect to INT Sandbox
       run: |
         echo ${{ secrets.SFDX_AUTHURL_INT2 }} > ./authfile
-        sf auth sfdxurl store --sfdx-url-file authfile --alias SANDBOX-INT --set-default
+        sf auth sfdxurl store --sfdx-url-file authfile --alias INT2 --set-default
     
     - name: Create new empty Profiles
       run: |
-        sf texei skinnyprofile create --target-org SANDBOX-INT
+        sf texei skinnyprofile create --target-org INT2
 
     - name: Deploy on INT Sandbox
       run: |
-        sf project deploy start --source-dir force-app --test-level RunLocalTests --target-org SANDBOX-INT --wait ${{ secrets.SFDX_TIMEOUT }} --ignore-conflicts --dry-run
+        sf project deploy start --source-dir force-app --test-level RunLocalTests --target-org INT2 --wait ${{ secrets.SFDX_TIMEOUT }} --ignore-conflicts --dry-run
